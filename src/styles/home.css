@@ -1,11 +1,27 @@
-/* 首页样式 */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-height: 100vh;
+/* 首页头图和布局专用样式 */
+.hero-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 40vw;      /* 高度为宽度的40% */
+  min-width: 100vw;
+  max-width: 100vw;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  /* 不要 object-fit */
 }
 
 .header {
@@ -34,155 +50,4 @@
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
-}
-
-.articles {
-  flex: 1;
-  padding: 40px 0;
-}
-
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #2d3748;
-  margin: 0 0 32px;
-  text-align: center;
-}
-
-.articles-grid {
-  display: grid;
-  gap: 32px;
-}
-
-.article-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
-}
-
-.article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: #cbd5e0;
-}
-
-.article-title {
-  margin: 0 0 12px;
-}
-
-.article-title a {
-  color: #2d3748;
-  text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
-  transition: color 0.2s ease;
-}
-
-.article-title a:hover {
-  color: #4299e1;
-}
-
-.article-excerpt {
-  color: #4a5568;
-  line-height: 1.6;
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-}
-
-.article-meta {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 12px;
-  font-size: 0.875rem;
-  color: #718096;
-}
-
-.article-date,
-.article-read-time {
-  display: flex;
-  align-items: center;
-}
-
-.article-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: #edf2f7;
-  color: #4a5568;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.tag:hover {
-  background: #e2e8f0;
-  color: #2d3748;
-}
-
-.footer {
-  text-align: center;
-  padding: 40px 0;
-  color: #718096;
-  font-size: 0.875rem;
-  border-top: 1px solid #e2e8f0;
-  margin-top: auto;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .header {
-    padding: 60px 0 40px;
-  }
-
-  .title {
-    font-size: 2.25rem;
-  }
-
-  .subtitle {
-    font-size: 1.125rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-
-  .article-card {
-    padding: 20px;
-  }
-
-  .article-title a {
-    font-size: 1.125rem;
-  }
-
-  .article-meta {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .header {
-    padding: 40px 0 30px;
-  }
-
-  .articles {
-    padding: 30px 0;
-  }
 } 

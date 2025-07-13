@@ -5,11 +5,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="李海波的博客 - 分享技术，峡谷钟馗" />
-		<title>李海波的博客</title>
 		<link rel="stylesheet" href="/src/styles/global.css">
 	</head>
 	<body>
+    <nav class="global-navbar">
+      <a class="nav-btn" href="/">首页</a>
+      <div class="nav-dropdown">
+        <a class="nav-btn nav-dropdown-toggle" href="/ngs">取样准备和样本寄送</a>
+        <div class="nav-dropdown-menu">
+          <a class="nav-btn nav-dropdown-item" href="/ngs/单细胞">单细胞</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/转录组">转录调控</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/基因组和重测序">基因组和重测序</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/文库纯测序">纯测序</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-btn nav-dropdown-toggle" href="/ngs">质检和启动</a>
+        <div class="nav-dropdown-menu">
+          <a class="nav-btn nav-dropdown-item" href="/ngs/单细胞">单细胞</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/转录组">转录调控</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/基因组和重测序">基因组和重测序</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/文库纯测序">纯测序</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-btn nav-dropdown-toggle" href="/ngs">数据交付</a>
+        <div class="nav-dropdown-menu">
+          <a class="nav-btn nav-dropdown-item" href="/ngs/单细胞">单细胞</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/转录组">转录调控</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/基因组和重测序">基因组和重测序</a>
+          <a class="nav-btn nav-dropdown-item" href="/ngs/文库纯测序">纯测序</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-btn nav-dropdown-toggle" href="/关于我">关于我</a>
+        <div class="nav-dropdown-menu">
+          <a class="nav-btn nav-dropdown-item" href="/关于我/目前工作">目前工作</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <img src="/02_18.png" alt="Bioinformatic & Biology" class="hero-image" />
+    </div>
 		<slot />
 	</body>
 </html>
