@@ -1,11 +1,85 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/home.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// 模拟文章数据
+const articles = [
+  {
+    id: 1,
+    title: "Astro 入门指南：构建现代静态网站",
+    excerpt: "Astro 是一个现代化的静态站点生成器，它允许你使用你喜欢的框架来构建更快的网站。本文将带你了解 Astro 的基础概念和使用方法。",
+    date: "2024-01-15",
+    tags: ["Astro", "前端", "教程"],
+    readTime: "5 分钟"
+  },
+  {
+    id: 2,
+    title: "CSS Grid 布局完全指南",
+    excerpt: "CSS Grid 是一个强大的布局系统，它可以帮助我们创建复杂的二维布局。本文将详细介绍 Grid 的各种属性和使用方法。",
+    date: "2024-01-10",
+    tags: ["CSS", "布局", "前端"],
+    readTime: "8 分钟"
+  },
+  {
+    id: 3,
+    title: "TypeScript 高级类型技巧",
+    excerpt: "TypeScript 的类型系统非常强大，掌握一些高级类型技巧可以让我们的代码更加类型安全和易于维护。",
+    date: "2024-01-05",
+    tags: ["TypeScript", "编程", "技巧"],
+    readTime: "6 分钟"
+  },
+  {
+    id: 4,
+    title: "现代 JavaScript 开发最佳实践",
+    excerpt: "随着 JavaScript 的不断发展，我们需要了解一些现代开发的最佳实践，包括模块化、异步编程、性能优化等。",
+    date: "2024-01-01",
+    tags: ["JavaScript", "最佳实践", "开发"],
+    readTime: "10 分钟"
+  }
+];
 ---
 
 <Layout>
-	<Welcome />
+  <main class="container">
+    <!-- 头部信息 -->
+    <header class="header">
+      <h1 class="title">李海波的博客【Blog of Machael】</h1>
+      <p class="subtitle">分享技术，记录生活</p>
+      <p class="description">
+        欢迎来到我的博客！这里主要分享前端开发、技术教程和个人思考。
+        希望能在这里与你一起学习和成长。
+      </p>
+    </header>
+
+    <!-- 文章列表 -->
+    <section class="articles">
+      <h2 class="section-title">最新文章</h2>
+      <div class="articles-grid">
+        {articles.map(article => (
+          <article class="article-card">
+            <div class="article-content">
+              <h3 class="article-title">
+                <a href={`/article/${article.id}`}>{article.title}</a>
+              </h3>
+              <p class="article-excerpt">{article.excerpt}</p>
+              <div class="article-meta">
+                <span class="article-date">{article.date}</span>
+                <span class="article-read-time">{article.readTime}</span>
+              </div>
+              <div class="article-tags">
+                {article.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+      <p>© 2024 Michael's Blog. Built with Astro.</p>
+    </footer>
+  </main>
 </Layout>
